@@ -38,7 +38,58 @@
 			<div class="slides">
 				<section>
           <img src="lib/img/logo.png">
+          <aside class="notes">
+            This is FunctionalJS London
+          </aside>
 				</section>
+        <section>
+          <h1>Welcome!</h1>
+          <aside class="notes">
+            Welcome! First session, thanks for coming. Talk briefly about why we started the meetup,
+            what we plan to do & what we're doing this evening. As you can tell from the name of
+            the meetup, we're all about...
+          </aside>
+        </section>
+        <section>
+          <h1>Functional Programming</h1>
+          <h2>in JavaScript</h2>
+          <aside class="notes">
+            Imagine we have people with a wide range of experience with FP so, at risk of
+            preaching to the choir but for the benefit of those who are new to FP, quickly go over
+            a few of the primary points of what FP means, without going into too much detail
+          </aside>
+        </section>
+        <section>
+          <h1>Wait, what?</h1>
+          <ul>
+            <li>Functions as primary abstraction - building blocks</li>
+            <li>Minimize side-effects</li>
+            <li>Immutability</li>
+            <li>Declarative vs imperative - processing flow of data</li>
+          </ul>
+          <aside class="notes">
+            First point might seem obvious, we do this all the time: create a construct we call
+            a function that may or may not take any arguments which performs some sort of computation.
+            But in realms of FP the definition of a function is mathmatical: mapping between values;
+            given a certain value to operate on, a function should always return the same result of
+            performing some operation every time it's called. Referential transparency.
+            Small function abstraction composed together to make more powerful abstractions.
+
+            Minimize side-effects: control amount of state manipulation our programs peform, makes
+            programs far easier to test, debug and reason about e.g. using higher-order functions like
+            map rather than for loops, or controlling state by using recursion. 
+
+            Immutability links in with this: mutability is a major cause of headaches and bugs particularly
+            in OOP, ends up in sprawling test suites where you try to check the state of a given value at a given time in
+            a program's execution. FP places emphasis on immutable values and operations like map, filter and reduce
+            that don't cause mutation. If a value can't change, a whole class of problem disappears.
+
+            Switch from imperative to declarative. Imperative how the program should accomplish something e.g. open a file,
+            check whether it exists, if it does, read it; check if it's empty, if it isn't read the first line
+            etc etc. Cements mutable state and step-by-step order of execution. Declarative: describing what the program
+            should accomplish, thinking about data flow and minimizing side-effects and mutable state.
+          </aside>
+        </section>
       </div>
 
 		</div>
@@ -52,12 +103,12 @@
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				controls: true,
-				progress: true,
+				progress: false,
 				history: true,
 				center: true,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
