@@ -75,22 +75,56 @@
             given a certain value to operate on, a function should always return the same result of
             performing some operation every time it's called. Referential transparency.
             Small function abstraction composed together to make more powerful abstractions.
+            Also very important is the idea of functions as values and as first-class: stores in variables,
+            passed into functions as arguments and returned from functions.
 
-            Minimize side-effects: control amount of state manipulation our programs peform, makes
-            programs far easier to test, debug and reason about e.g. using higher-order functions like
-            map rather than for loops, or controlling state by using recursion. 
-
-            Immutability links in with this: mutability is a major cause of headaches and bugs particularly
+            Immutability: mutability is a major cause of headaches and bugs particularly
             in OOP, results in sprawling test suites where you try to check the state of a given value at a given time in
             a program's execution. FP places emphasis on immutable values and operations that don't cause mutation.
             If a value can't change, a whole class of problem disappears.
 
-            Switch from imperative to declarative. Imperative how the program should accomplish something e.g. open a file,
+            Minimize side-effects: control amount of state manipulation our programs peform, makes
+            programs far easier to test, debug and reason about e.g. using higher-order functions like
+            map rather than for loops, or controlling state by using recursion. We can focus on writing functions,
+            for example, that don't mutate state. Might sound pretty pointless to write a program that doesn't have
+            any side effects; we actually want something to happen! Differentiation to be made between our programs
+            actually accomplishing something and needed to maintain and mutate a lot of state in order to do it.
+
+            Switch from imperative to declarative. Imperative how the program should go about accomplishing something e.g. open a file,
             check whether it exists, if it does, read it; check if it's empty, if it isn't read the first line
             etc etc. Cements mutable state and step-by-step order of execution. Declarative: describing what the program
             should accomplish, thinking about data flow and minimizing side-effects and mutable state.
+          </aside>
+        </section>
+        <section>
+          <h1>Also:</h1>
+          <ul>
+            <li>Lazy/delayed evaluation</li>
+            <li>Composition</li>
+            <li>Combinators</li>
+            <li>Functors</li>
+            <li>Applicatives</li>
+            <li>Monoids</li>
+            <li>Monads</li>
+          </ul>
+          <aside class="notes">
+            There's also some funkier-sounding concepts and structures like: lazy/delayed evaluation, being the idea
+            that code isn't evaluated unless it's actually needed. Languages like Haskell do this.
+            
+            Composition: mentioned briefly already, that we can compose functions together.
+            
+            Combinators: higher-order functions that act on other functions to produce functions.
+            There's one called the I (or Identity) combinator that just returns anything that's passed to it,
+            and there's the Y combinator which is what you use if you want to get funded.
+            
+            Yes, there are also some pretty crazy-sounding parts of FP like functors, applicatives, monoids and, yes,
+            monads, too. These things are part of functional programming but where a lot of people may just lose
+            interest and think you need a CompSci degree or be a maths whiz to understand whats going on. Despite
+            having crazy names, the concepts they describe aren't too complicated. It's the same as any programming pattern:
+            once you know it, you start seeing it everywhere.
 
-            Not exhaustive, assuming that come tonight with some idea of the benefits that FP has to offer.
+            So this isn't an exhaustive list of FP obviously, but if you're interested by any of this, then you're
+            in the right place.
           </aside>
         </section>
         <section>
@@ -108,8 +142,9 @@
             <li>...and more</li>
           </ul>
           <aside class="notes">
-            So what we'll be focussing on functional programming in JS and how we can apply it. Might involve
-            looking at functional libraries such as US/LoDash, functional.js by Oliver Steele, or something like
+            So what we'll be focussing on functional programming in JS and how we can apply it. Not simply an academic
+            exercise but FP has real practical benefits.
+            Might involve looking at functional libraries such as US/LoDash, functional.js by Oliver Steele, or something like
             functional reactive programming with Bacon.js.
             Also compile-to-JS languages that make FP in JS enjoyable and easier, such as
             LiveScript (an indirect descendant of CS with a similar syntax), Roy by Brian McKenna (JS semantics with
@@ -131,8 +166,8 @@
             <li>FP Dojo</li>
           </ul>
           <aside class="notes">
-            Tommy Hall with a talk entitled "JS == Scheme".
-            Followed by a code dojo. Where we'll split out into groups and look through an example
+            @thattommyhall with a talk entitled "JS == Scheme".
+            Followed by a code dojo, where we'll split out into groups and look through an example
             of how you might go about refactoring OO code into a functional style, with the goal of understanding
             some real-world application of functional programming, learn from each and have some fun; talk more about
             that later.
